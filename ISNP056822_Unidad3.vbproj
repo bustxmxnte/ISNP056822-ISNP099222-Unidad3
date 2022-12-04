@@ -74,17 +74,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alumno.vb" />
-    <Compile Include="Form.vb">
+    <Compile Include="Auto.vb" />
+    <Compile Include="Form_Alumno.Designer.vb">
+      <DependentUpon>Form_Alumno.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Alumno.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form.Designer.vb">
-      <DependentUpon>Form.vb</DependentUpon>
+    <Compile Include="Form_Auto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Auto.Designer.vb">
+      <DependentUpon>Form_Auto.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Principal.Designer.vb">
+      <DependentUpon>Form_Principal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Principal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -96,11 +110,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="registro_alumno.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form.resx">
-      <DependentUpon>Form.vb</DependentUpon>
+    <EmbeddedResource Include="Form_Alumno.resx">
+      <DependentUpon>Form_Alumno.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Auto.resx">
+      <DependentUpon>Form_Auto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Principal.resx">
+      <DependentUpon>Form_Principal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
