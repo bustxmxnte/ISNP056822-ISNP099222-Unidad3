@@ -73,19 +73,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\Isnp099222Isnp056822_Unidad3.Designer.vb">
+      <DependentUpon>Isnp099222Isnp056822_Unidad3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\Isnp099222Isnp056822_Unidad3.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Alumno.vb" />
     <Compile Include="Auto.vb" />
     <Compile Include="Form_Alumno.Designer.vb">
       <DependentUpon>Form_Alumno.vb</DependentUpon>
     </Compile>
     <Compile Include="Form_Alumno.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_Auto.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_Auto.Designer.vb">
-      <DependentUpon>Form_Auto.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_Principal.Designer.vb">
@@ -112,11 +111,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="..\..\Isnp099222Isnp056822_Unidad3.resx">
+      <DependentUpon>Isnp099222Isnp056822_Unidad3.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Alumno.resx">
       <DependentUpon>Form_Alumno.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_Auto.resx">
-      <DependentUpon>Form_Auto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Principal.resx">
       <DependentUpon>Form_Principal.vb</DependentUpon>
@@ -129,6 +128,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include=".editorconfig" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

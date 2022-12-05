@@ -1,7 +1,6 @@
 ﻿Public Class Alumno
 
     'Declaramos propiedades
-    Private codigo As String
     Private nombre As String
     Private apellido As String
     Private dui As String
@@ -9,6 +8,8 @@
     Private edad As String
     Private correo As String
     Private carrera As String
+    Private Codigo As String
+
 
     'Indicador de cumplemento de datos
     Private datos_completos As Boolean
@@ -16,7 +17,7 @@
     'Metodos de la clase
 
     ''Metodo para nombre
-    Public Property nombre_alumno As String
+    Public Property nombre_alumno() As String
         Get
             Return nombre
         End Get
@@ -26,7 +27,7 @@
     End Property
 
     ''Metodo para apellido
-    Public Property apellido_alumno As String
+    Public Property apellido_alumno() As String
         Get
             Return apellido
         End Get
@@ -36,7 +37,7 @@
     End Property
 
     ''Metodo para dui
-    Public Property dui_alumno As String
+    Public Property dui_alumno() As String
         Get
             Return dui
         End Get
@@ -46,7 +47,7 @@
     End Property
 
     ''Metodo para genero
-    Public Property genero_alumno As String
+    Public Property genero_alumno() As String
         Get
             Return genero
         End Get
@@ -56,7 +57,7 @@
     End Property
 
     ''Metodo para edad
-    Public Property edad_alumno As String
+    Public Property edad_alumno() As String
         Get
             Return edad
         End Get
@@ -66,7 +67,7 @@
     End Property
 
     ''Metodo para correo
-    Public Property correo_alumno As String
+    Public Property correo_alumno() As String
         Get
             Return correo
         End Get
@@ -76,7 +77,7 @@
     End Property
 
     ''Metodo para carrera
-    Public Property carrera_alumno As String
+    Public Property carrera_alumno() As String
         Get
             Return carrera
         End Get
@@ -101,67 +102,77 @@
 
 
     'Atributos de clase
-    Public Sub datos_alumnos(ByVal codigo As String,
-                             ByVal nombre As String,
-                             ByVal apellido As String,
-                             ByVal dui As String,
-                             ByVal edad As String,
-                             ByVal correo As String,
-                             ByVal carrera As String
-                            )
+    Public Sub datos_alumnos(ByVal codigoA As String,
+                             ByVal nombreA As String,
+                             ByVal apellidoA As String,
+                             ByVal duiA As String,
+                             ByVal generoA As String,
+                             ByVal edadA As String,
+                             ByVal correoA As String,
+                             ByVal carreraA As String)
 
         datos_completos = False
 
+        If codigoA.Length = 0 Then
+            MsgBox("Debe generar el codigo")
+        Else
+            Codigo = codigoA
 
-        If nombre.Length = 0 Then
+        End If
+        If nombreA.Length = 0 Then
             MsgBox("Debe agregar uno o dos nombres")
         Else
-            nombre = nombre
+            nombre = nombreA
         End If
 
-        If apellido.Length = 0 Then
+        If apellidoA.Length = 0 Then
             MsgBox("Debe agregar uno o dos apellidos")
         Else
-            apellido = apellido
+            apellido = apellidoA
         End If
 
-        If dui.Length = 0 Then
-            MsgBox("Debe ingresar un número de DUI")
+        If duiA.Length > 0 And duiA.Length < 10 Then
+            MsgBox("Debe agregar dui de formato 00000000-0")
         Else
-            dui = dui
+            dui = duiA
         End If
+        If generoA.Length = 0 Then
+            MsgBox("Debe de agregar genero")
+        Else
+            genero = generoA
 
-        If edad.Length = 0 Then
+        End If
+        If edadA.Length = 0 Then
             MsgBox("Debe agregar un nombre")
         Else
-            edad = edad
+            edad = edadA
         End If
 
-        If correo.Length = 0 Then
+        If correoA.Length = 0 Then
             MsgBox("Debe agregar un nombre")
         Else
-            correo = correo
+            correo = correoA
         End If
 
-        If carrera.Length = 0 Then
+        If carreraA.Length = 0 Then
             MsgBox("Debe agregar un nombre")
         Else
-            carrera = carrera
+            carrera = carreraA
         End If
 
     End Sub
 
 
-    Public Function generar_codigo()
+    Public Function generarCodigo(ByVal nombre As String)
 
         Dim valor1 As String
         Dim valor2 As String
         Dim numero As Single
 
         valor1 = UCase(Left(nombre, 1))
-        valor2 = UCase(Left(apellido, 1))
-        numero = Int(Rnd() * 1000) + 77
+        valor2 = Right(nombre, 2)
+        numero = Int(Rnd() * 1000) + 65
 
-        Return valor1 & valor2 & numero
+        Return valor1 & numero & valor2
     End Function
 End Class
